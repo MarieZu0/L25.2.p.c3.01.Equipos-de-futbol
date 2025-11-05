@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página y de la vista previa (WhatsApp) -->
+    <title>Mi Equipo (v.01)</title>
+    <meta property="og:title" content="Mi Equipo (v.01)" />
+    <!-- Descripción corta y atractiva -->
+    <meta property="og:description" content="Equipo de Futbol >UCLA-DCyT<" />
+    <!-- Imagen que se muestra en WhatsApp (logo o imagen destacada, 800x418 px recomendado) -->
+    <meta property="og:image" content="https://???-v10.vercel.app/resources/logo.png" />
+    <!-- URL del proyecto -->
+    <meta property="og:url" content="https://???-v10.vercel.app" />
+    <!-- Tipo de contenido -->
+    <meta property="og:type" content="website" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./resources/favicon.png">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles.css?v251103-1750" />
+</head>
+
+<body>
+    <h3 style="width: 320px;">PROYECTO DE PARTIDOS v.01</h3>
+    <section id="partido">
+        <div>
+            <button id="partido_btAgregarEquipo">Agregar Equipo</button>
+        </div>
+    </section>
+    <section style="font-size: 10px;">
+        <h3>EQUIPOS REGISTRADOS</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 100px;">Equipo</th>
+                    <th style="width: 80px;">Jugador 1</th>
+                    <th style="width: 80px;">Cédula 1</th>
+                    <th style="width: 80px;">Jugador 2</th>
+                    <th style="width: 80px;">Cédula 2</th>
+                    <th style="width: 80px;">Jugador 3</th>
+                    <th style="width: 80px;">Cédula 3</th>
+                    <th style="width: 80px;">Jugador 4</th>
+                    <th style="width: 80px;">Cédula 4</th>
+                </tr>
+            </thead>
+            <tbody id="partido_divEquiposRegistrados"> </tbody>
+        </table>
+    </section>
+    <script type="module">
+        import Cl_index from "./dist/Cl_index.js";
+        new Cl_index()
+    </script>
+</body>
+
+</html>

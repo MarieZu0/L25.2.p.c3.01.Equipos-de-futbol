@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f9;
+  padding: 20px;
+}
+
+section {
+  border: 3px solid rgb(122, 3, 151);
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 20px;
+  width: 900px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  color: white;
+  background-color: rgb(118, 20, 163);
+  padding: 8px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 0;
+}
+h4 {
+  margin-top: 5px;
+  margin-bottom: 2px;
+  font-style: italic;
+  font-weight: normal;
+  color: seagreen;
+}
+
+label {
+  margin-top: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+button {
+  margin-top: 15px;
+  background-color: rgb(81, 2, 97);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(122, 3, 151);
+}
+
+input {
+  width: 100px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+th,
+td {
+  border: 1px solid #37093b;
+  text-align: center;
+  padding: 8px 4px;
+}
+
+thead th {
+
+    background-color: #e9bdf1; 
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+
+tbody tr:hover {
+    background-color: #e2e6ea;
+}
+
+#partido {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+#ficha {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 10px;
+}
+#mainForm {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.colCurrency {
+  text-align: right;
+  padding-left: 10px;
+}
+.colNumber {
+  column-width: 50px;
+}
+.divSalida {
+  display: flex;
+  flex-direction: column;
+}
+.spanInfo {
+  font-size: 10px;
+  font-style: italic;
+  color: rgb(0, 0, 0);
+}
