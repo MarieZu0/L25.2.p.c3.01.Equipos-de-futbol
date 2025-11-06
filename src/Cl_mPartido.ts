@@ -17,8 +17,8 @@ export default class Cl_mPartido {
             callback(`El equipo ${equipo.nombreEquipo} ya existe`);
             return;
         }
-        // Validar que el equipo no tenga menos de dos miembros
-        if (equipo.cantidadJugadores() < 2)
+        // Validar que el equipo no tenga menos de tres miembros
+        if (equipo.cantidadJugadores() < 3)
         {
             callback(`El equipo ${equipo.nombreEquipo} debe tener al menos dos miembros.`);
             return;

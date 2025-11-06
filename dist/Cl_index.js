@@ -1,7 +1,7 @@
 /*
 Se requiere una micro-APP que permita registrar la información de unos equipos de jugadores
 para distintos partidos de
-fútbol. Cada equipo admite hasta 4 jugadores, minimo de 2 jugadores por equipo, de los que
+fútbol. Cada equipo admite hasta 4 jugadores, minimo de 3 jugadores por equipo, de los que
 se conoce su nombre y cedula.
 Cada equipo también tiene un nombre.
 -Los nombres de los equipos deben ser unicos, es decir, no deben repetirse.
