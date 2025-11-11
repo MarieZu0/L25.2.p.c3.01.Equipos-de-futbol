@@ -24,6 +24,7 @@ export default class Cl_mPartido {
             return;
         }
 
+
         // Validar cedula repetida
         if (equipo.error()) {
             callback(`El equipo ${equipo.nombreEquipo} tiene cédula repetida internamente.`);
