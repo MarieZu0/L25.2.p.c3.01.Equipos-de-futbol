@@ -11,12 +11,7 @@ export default class Cl_mPartido {
         }
         // Validar que el equipo no tenga menos de tres miembros
         if (equipo.cantidadJugadores() < 3) {
-            callback(`El equipo ${equipo.nombreEquipo} debe tener al menos dos miembros.`);
-            return;
-        }
-        // Validar que el equipo no tenga más de cuatro miembros
-        if (equipo.cantidadJugadores() > 4) {
-            callback(`El equipo ${equipo.nombreEquipo} no puede tener más de cuatro miembros.`);
+            callback(`El equipo ${equipo.nombreEquipo} debe tener al menos tres miembros.`);
             return;
         }
         // Validar cedula repetida

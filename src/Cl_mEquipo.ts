@@ -14,7 +14,7 @@ export default class Cl_mEquipo {
     private _cedula1: string="";
     private _cedula2: string="";
     private _cedula3: string="";
-    private _cedula4: string= "";
+    private _cedula4: string="";
     private _nombre1: string="";
     private _nombre2: string="";
     private _nombre3: string="";
