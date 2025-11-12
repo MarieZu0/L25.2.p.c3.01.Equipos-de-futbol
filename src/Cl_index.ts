@@ -15,17 +15,38 @@
     */
 
 import Cl_controlador from "./Cl_controlador.js";
+import Cl_mEquipo, {iEquipo} from "./Cl_mEquipo.js";
 import Cl_mPartido from "./Cl_mPartido.js";
 import Cl_vPartido from "./Cl_vPartido.js";
+import { dtEquipos } from "./data/dtEquipos.js";
 
 export default class Cl_index {
   public modelo: Cl_mPartido;
   public vista: Cl_vPartido;
   constructor() {
     this.modelo = new Cl_mPartido();
+    let equiposLS = localStorage.getItem("partido");
+    if (equiposLS) {
+      let equiposDT = JSON.parse(equiposLS);      
+      equiposDT.forEach((equipo: iEquipo) => {
+        this.modelo.agregarEquipo({
+          equipo: new Cl_mEquipo(equipo),
+          callback: (error: string | false) => {
+            // Ignorar errores al cargar desde localStorage
+          },
+        });
+      });
+    }
     this.vista = new Cl_vPartido();
     let controlador = new Cl_controlador(this.modelo, this.vista);
     this.vista.controlador = controlador;
+    dtEquipos.forEach((equipo) => {
+      this.modelo.agregarEquipo({
+        equipo: new Cl_mEquipo(equipo),
+        callback: (error) => {
+        }
+      });
+    });
     this.vista.refresh();
   }
 }
