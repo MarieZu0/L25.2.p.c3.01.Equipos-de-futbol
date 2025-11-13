@@ -1,6 +1,6 @@
 import Cl_mEquipo, { iEquipo } from "./Cl_mEquipo.js";
 export default class Cl_mPartido {
-    private equipos: Cl_mEquipo[] = [];    
+    private partido: Cl_mEquipo[] = [];    
 
     agregarEquipo({
         equipo,
@@ -10,7 +10,7 @@ export default class Cl_mPartido {
         callback: (error: string | false) => void;
     }): void {
         // Validar nombre del equipo repetido
-        const nombreRepetido = this.equipos.find(
+        const nombreRepetido = this.partido.find(
             (e) => e.nombreEquipo.toLowerCase() === equipo.nombreEquipo.toLowerCase()
         );
         if (nombreRepetido) {
@@ -20,15 +20,10 @@ export default class Cl_mPartido {
         // Validar que el equipo no tenga menos de tres miembros
         if (equipo.cantidadJugadores() < 3)
         {
-            callback(`El equipo ${equipo.nombreEquipo} debe tener al menos dos miembros.`);
+            callback(`El equipo ${equipo.nombreEquipo} debe tener al menos tres miembros.`);
             return;
         }
-        // Validar que el equipo no tenga más de cuatro miembros
-        if (equipo.cantidadJugadores() > 4)
-        {
-            callback(`El equipo ${equipo.nombreEquipo} no puede tener más de cuatro miembros.`);
-            return;
-        }
+
 
         // Validar cedula repetida
         if (equipo.error()) {
@@ -36,7 +31,7 @@ export default class Cl_mPartido {
             return;
         }
           // Validar cedulas contra todos los equipos existentes
-        for (const e of this.equipos) {
+        for (const e of this.partido) {
             if (
             e.existeCedula(equipo.cedula1) ||
             e.existeCedula(equipo.cedula2) ||
@@ -50,12 +45,15 @@ export default class Cl_mPartido {
             }
         }
           // Si todo está bien, agregar el equipo
-        this.equipos.push(equipo);
+        this.partido.push(equipo);
+        localStorage.setItem("partido", JSON.stringify(this.listar()));
         callback(false);
     }
     listar(): iEquipo[] {
-        let equipos: iEquipo[] = [];
-        this.equipos.forEach((e) => equipos.push(e.toJSON()));
-        return equipos;
+        let lista: iEquipo[] = [];
+        this.partido.forEach((equipo) => {
+            lista.push(equipo.toJSON());
+        });
+        return lista;
     }
-}
+    }
