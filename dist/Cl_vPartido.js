@@ -23,8 +23,8 @@ export default class Cl_vPartido extends Cl_vGeneral {
             <td>${equipo.cedula1}</td>
             <td>${equipo.nombre2}</td>
             <td>${equipo.cedula2}</td>
-            <td>${equipo.nombre3 ? equipo.nombre3 : ""}</td>
-            <td>${equipo.cedula3 ? equipo.cedula3 : ""}</td>
+            <td>${equipo.nombre3}</td>
+            <td>${equipo.cedula3}</td>
             <td>${equipo.nombre4 ? equipo.nombre4 : ""}</td>
             <td>${equipo.cedula4 ? equipo.cedula4 : ""}</td>
         </tr>`;
@@ -46,8 +46,12 @@ export default class Cl_vPartido extends Cl_vGeneral {
         let cedula2 = prompt("Ingrese la cédula 2:");
         if (!cedula2)
             return;
-        let nombre3 = prompt("Ingrese el nombre del miembro 3 (opcional):");
-        let cedula3 = prompt("Ingrese la cédula 3 (opcional):");
+        let nombre3 = prompt("Ingrese el nombre del miembro 3:");
+        if (!nombre3)
+            return;
+        let cedula3 = prompt("Ingrese la cédula 3:");
+        if (!cedula3)
+            return;
         let nombre4 = prompt("Ingrese el nombre del miembro 4 (opcional):");
         let cedula4 = prompt("Ingrese la cédula 4 (opcional):");
         this.controlador.agregarEquipo({
@@ -57,8 +61,8 @@ export default class Cl_vPartido extends Cl_vGeneral {
                 cedula1: cedula1,
                 nombre2: nombre2,
                 cedula2: cedula2,
-                nombre3: nombre3 ? nombre3 : "",
-                cedula3: cedula3 ? cedula3 : "",
+                nombre3: nombre3,
+                cedula3: cedula3,
                 nombre4: nombre4 ? nombre4 : "",
                 cedula4: cedula4 ? cedula4 : "",
             },
